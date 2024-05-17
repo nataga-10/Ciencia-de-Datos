@@ -1,0 +1,60 @@
+Este script en Python conecta a Azure Cosmos DB para almacenar y consultar IPs vulnerables a Bluekeep usando la API de BinaryEdge. Configura la conexión, verifica si la IP ya está almacenada, inserta nueva información si no lo está y consulta todas las IPs almacenadas. Requiere `json`, `requests`, `azure.cosmos`, `datetime`.
+
+
+
+## Requisitos
+- Python 3.6 o superior
+- Librerías Python:
+  - `requests`
+  - `azure-cosmos`
+- Cuenta de Azure Cosmos DB
+
+## Instalación
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/cosmosdb-ip-vulnerability-checker.git
+   cd cosmosdb-ip-vulnerability-checker
+   ```
+
+2. Instala las dependencias:
+   ```bash
+   pip install requests azure-cosmos
+   ```
+
+3. Configura tus credenciales de Azure Cosmos DB en el archivo `config.py`:
+   ```python
+   ENDPOINT = 'https://<TU_COSMOS_DB>.documents.azure.com:443/'
+   KEY = '<TU_CLAVE_DE_ACCESO>'
+   DATABASE_ID = 'cosmosbryan2'
+   CONTAINER_ID = 'COSMOS_DATABASE'
+   PARTITION_KEY = '/ip'
+   ```
+
+## Uso
+1. Modifica la URL de la API de BinaryEdge y el token de autenticación en la función `main` según tus necesidades:
+   ```python
+   url = 'https://api.binaryedge.io/v2/query/search?query=type:bluekeep%20AND%20ip:<IP>'
+   headers = {'X-Key': '<TU_API_KEY>'}
+   ip_objetivo = '<IP_OBJETIVO>'
+   ```
+
+2. Ejecuta el script:
+   ```bash
+   python main.py
+   ```
+
+## Estructura del Código
+- **Conexión a Cosmos DB**:
+  - Se conecta a la base de datos y contenedor especificados, creando estos recursos si no existen.
+- **Funciones Principales**:
+  - `is_ip_already_stored(container, ip)`: Verifica si una IP ya está almacenada en Cosmos DB.
+  - `is_ip_vulnerable(ip, respuesta_json)`: Determina si una IP es vulnerable según la respuesta de la API de BinaryEdge.
+  - `insert_ip_info(container, ip, es_vulnerable)`: Inserta información de una IP en Cosmos DB si no está previamente almacenada.
+  - `consultar_ips(container)`: Consulta y muestra todas las IPs almacenadas en Cosmos DB.
+- **Función `main`**:
+  - Realiza la consulta a la API de BinaryEdge, verifica la vulnerabilidad de la IP objetivo y almacena la información en Cosmos DB si es necesario.
+
+
+## Autor
+Nathalia G.
+
