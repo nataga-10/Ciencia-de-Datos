@@ -1,0 +1,139 @@
+
+# IP Vulnerability and CVE Information Checker
+
+## Descripción
+Este proyecto permite validar una dirección IP y obtener información sobre sus vulnerabilidades, puntuaciones CVSS y soluciones utilizando la API de Shodan y la API de MITRE.
+
+## Requisitos
+- Python 3.6 o superior
+- Librerías Python:
+  - `requests`
+  - `re`
+
+## Instalación
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/ip-vulnerability-checker.git
+   cd ip-vulnerability-checker
+   ```
+
+2. Instala las dependencias:
+   ```bash
+   pip install requests
+   ```
+
+3. Configura tu clave de API de Shodan en el código (`get_vulnerabilities`):
+   ```python
+   key = "<TU_API_KEY>"
+   ```
+
+## Uso
+1. Modifica la dirección IP objetivo en el script:
+   ```python
+   ip_address = "106.54.14.87"
+   ```
+
+2. Ejecuta el script:
+   ```bash
+   python main.py
+   ```
+
+## Estructura del Código
+- **Validación de IP**:
+  - `validate_ip(ip_address)`: Valida una dirección IP utilizando una expresión regular.
+- **Funciones Principales**:
+  - `get_vulnerabilities(ip_address)`: Obtiene información de vulnerabilidades, puntuaciones CVSS y soluciones para una IP específica.
+  - `get_solution(vuln_id)`: Devuelve una solución para una vulnerabilidad desde una fuente externa (demostración con mensaje genérico).
+  - `get_cve_info(cve_id)`: Consulta información adicional de la CVE desde la API de MITRE.
+- **Función Principal**:
+  - Valida la dirección IP antes de llamar a `get_vulnerabilities`.
+
+## Ejemplo de Salida
+```
+Vulnerabilidad CVE: CVE-XXXX-XXXX
+Puntuación CVSS: 7.5
+Resumen: Descripción de la vulnerabilidad.
+Solución: Aplicar el parche de seguridad.
+--------------------------------------------------
+Información adicional de la CVE:
+Product: Nombre del producto
+Vendor: Nombre del proveedor
+Versions: ['1.0', '2.0']
+==================================================
+```
+
+## Licencia
+Este proyecto está licenciado bajo los términos de la [MIT License](LICENSE).
+
+## Autor
+Bryan René Rojas Hernández
+
+---
+
+Este README proporciona una guía completa sobre cómo configurar, usar y entender el código proporcionado. Si necesitas más detalles o ajustes, no dudes en decírmelo.
+
+# IP Vulnerability and CVE Information Checker
+
+## Descripción
+Este proyecto permite validar una dirección IP y obtener información sobre sus vulnerabilidades, puntuaciones CVSS y soluciones utilizando la API de Shodan y la API de MITRE.
+
+## Requisitos
+- Python 3.6 o superior
+- Librerías Python:
+  - `requests`
+  - `re`
+
+## Instalación
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/ip-vulnerability-checker.git
+   cd ip-vulnerability-checker
+   ```
+
+2. Instala las dependencias:
+   ```bash
+   pip install requests
+   ```
+
+3. Configura tu clave de API de Shodan en el código (`get_vulnerabilities`):
+   ```python
+   key = "<TU_API_KEY>"
+   ```
+
+## Uso
+1. Modifica la dirección IP objetivo en el script:
+   ```python
+   ip_address = "106.54.14.87"
+   ```
+
+2. Ejecuta el script:
+   ```bash
+   python main.py
+   ```
+
+## Estructura del Código
+- **Validación de IP**:
+  - `validate_ip(ip_address)`: Valida una dirección IP utilizando una expresión regular.
+- **Funciones Principales**:
+  - `get_vulnerabilities(ip_address)`: Obtiene información de vulnerabilidades, puntuaciones CVSS y soluciones para una IP específica.
+  - `get_solution(vuln_id)`: Devuelve una solución para una vulnerabilidad desde una fuente externa (demostración con mensaje genérico).
+  - `get_cve_info(cve_id)`: Consulta información adicional de la CVE desde la API de MITRE.
+- **Función Principal**:
+  - Valida la dirección IP antes de llamar a `get_vulnerabilities`.
+
+## Ejemplo de Salida
+```
+Vulnerabilidad CVE: CVE-XXXX-XXXX
+Puntuación CVSS: 7.5
+Resumen: Descripción de la vulnerabilidad.
+Solución: Aplicar el parche de seguridad.
+--------------------------------------------------
+Información adicional de la CVE:
+Product: Nombre del producto
+Vendor: Nombre del proveedor
+Versions: ['1.0', '2.0']
+==================================================
+
+
+## Autor
+Nathalia G.
