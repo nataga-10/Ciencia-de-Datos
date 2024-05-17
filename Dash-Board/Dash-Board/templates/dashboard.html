@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <div class="image-gallery">
+            {% for image_path in image_paths %}
+                <div class="image-container" onclick="showImage('{{ url_for('static', filename=image_path) }}')">
+                    <img src="{{ url_for('static', filename=image_path) }}" alt="Image">
+                    <div class="image-title">Ver Imagen</div>
+                </div>
+            {% endfor %}
+        </div>
+        <footer>
+            <p><i>Created by Nathalia G. & Bryan R.</i></p>
+        </footer>
+    </div>
+
+    <script>
+        function showImage(imagePath) {
+            window.open(imagePath, '_blank');
+        }
+    </script>
+</body>
+</html>

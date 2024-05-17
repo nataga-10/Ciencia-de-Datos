@@ -1,0 +1,14 @@
+Dashboard de Gestión de Vulnerabilidades (CVEs)
+
+	Este proyecto consiste en un 	sistema de gestión de 	vulnerabilidades que recopila 	datos sobre programas instalados 	en computadoras, consulta 	información sobre 	vulnerabilidades asociadas a 	estos programas desde diversas 	fuentes y luego muestra 	estadísticas y gráficos útiles 	para comprender y abordar las 	vulnerabilidades.
+
+Requisitos de Instalación
+	-Python 3.x
+	-MongoDB
+	-Dash
+	-Plotly
+	-pymongo
+	-requests	
+Configuración
+	-MongoDB URI: Reemplaza la URI de 	conexión en el código con la tuya 	propia si estás utilizando una 	instancia remota de MongoDB.
+	-API Keys: Asegúrate de tener las 	claves de API necesarias para 	acceder a las API externas 	utilizadas en el código.

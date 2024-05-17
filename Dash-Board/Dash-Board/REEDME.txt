@@ -1,0 +1,15 @@
+Para abrir el dashboard hay que seguir lo siguientes pasos:
+
+paso 1:
+ejecutar el archivo app.py y copiar la siguiente estrutura de la consola:
+ * Running on http://127.0.0.1:5000
+
+una vez copiado el http copiarlo en un navegador
+
+paso 2:
+
+agregar a la url http://127.0.0.1:5000 la siguiente ruta /show_images
+
+y ya se podra visualizar el dashboard con la ruta completa:
+http://127.0.0.1:5000/show_images
+
